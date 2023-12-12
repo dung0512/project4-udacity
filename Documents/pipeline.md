@@ -1,24 +1,19 @@
-## Architecture Diagrams
-![Pipeline](https://github.com/canthuy/udacity-project-4/assets/67618651/2474a160-799c-4e55-9000-3756753779cb)
+## Github
+A developer first creates an emoji repository on github, puts the code and commits it.
+Repository is connected to CircleCi and fired whenever a developer pushes a change to the connected repository.
 
 ## CircleCi
+The *.circleci/config.yml* file needs to be in the root folder so that CircleCi can read it and perform its two main tasks: build and deploy for both the backend and frontend.
 
-The order of the run jobs:
+## Pipeline
 
-- Setting Env Variables.
-- Install NodeJS.
-- Checkout Code & Cloning the Repo.
-- Install AWS CLI v2.
-- Check & Disable AWS pager.
-- Configure AWS AccessKeyID.
-- Configure AWS Region.
-- Frontend:
-  - Install dependencies.
-  - Build the angular.
-  - Deploy the site to AWS S3.
-- Backend:
-  - Install dependencies.
-  - Change The main entry point in package.json.
-  - Transpile the typescript/ build the app.
-  - Install AWS Elastic Beanstalk CLI.
-  - Deploy the app to AWS Elastic Beanstalk.
+From the root of the project:
+- `npm run frontend:install`    - To install frontend dependencies.
+- `npm run frontend:build`      - To build the Angular/Frontend.
+- `npm run frontend:lint`       - To lint the Angular/Frontend.
+- `npm run frontend:e2e`        - To e2e the Angular/Frontend.
+- `npm run frontend:deploy`     - To deploy the project to S3 using deploy script.
+- `npm run api:install`         - To install backend dependencies.
+- `npm run api:build`           - To transpile the Typescript/Backend.
+- `npm run api:deploy`          - To deploy the project to EB using deploy script.
+
