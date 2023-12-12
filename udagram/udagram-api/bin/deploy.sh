@@ -1,6 +1,6 @@
-# eb init udagram_api --platform node.js --region us-east-1
-# eb create Udagram-api-env --region us-east-1
-# eb use Udagram-api-env
+eb init udagram_api --platform node.js --region us-east-1
+eb create Udagram-api-env --region us-east-1
+eb use Udagram-api-env
 eb deploy  
 eb health
 # eb open
