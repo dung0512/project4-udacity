@@ -1,3 +1,14 @@
+# eb init udagram_api --platform node.js --region us-east-1
+# eb create Udagram-api-env --region us-east-1
+# eb use Udagram-api-env
+eb deploy  
+eb health
+# eb open
+
+# if you want read the logs
+# eb logs
+
+
 echo "AWS_ACCESS_KEY_ID " ${AWS_ACCESS_KEY_ID}
 eb setenv AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
 echo "AWS_SECRET_ACCESS_KEY " ${AWS_SECRET_ACCESS_KEY}
